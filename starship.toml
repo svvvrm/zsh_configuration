@@ -68,4 +68,4 @@ style_root  = "bold red"
 
 [hostname]
 ssh_only = false
-format   = "[【 $hostname$ssh_symbol](bold blue) "
+format   = "[【 $ssh_symbol$hostname](bold blue) "

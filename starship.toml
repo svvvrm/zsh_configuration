@@ -2,7 +2,7 @@
 
 add_newline = false
 
-format = "${custom.root}$hostname$directory$git_branch$git_status$nodejs$rust$golang$php$character"
+format = "${custom.root}$hostname$username$directory$git_branch$git_status$nodejs$rust$golang$php$character"
 
 [os]
 disabled = false
@@ -21,7 +21,8 @@ truncation_length = 4
 truncate_to_repo  = true
 
 [git_branch]
-format = "[【 $branch 】](bold purple) "
+symbol = " "
+format = "on [$symbol $branch](bold purple) "
 
 [git_status]
 format     = "($ahead_behind$staged$modified$untracked$deleted$conflicted)"
@@ -59,6 +60,12 @@ vimcmd_symbol  = "[❮](blue)"
 when   = '[ "$(id -u)" -eq 0 ]'
 format = "[root](bold red) "
 
+[username]
+show_always = true
+format      = "[~ $user 】]($style) "
+style_user  = "bold blue"
+style_root  = "bold red"
+
 [hostname]
 ssh_only = false
-format   = "[$hostname $ssh_symbol](bold cyan) "
+format   = "[【 $hostname$ssh_symbol](bold blue) "
